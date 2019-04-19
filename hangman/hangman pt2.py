@@ -26,8 +26,10 @@ list(string)
 import collections
 
 
-
 def getGuessedWord(secretWord, lettersGuessed):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    listed = list(alphabet)
+    listedNotGuessed = "You have not guessed " + str(listed) + " letters yet."
     print(listedNotGuessed)
     for i in range(len(alphabet)):
         guess = input("Type in a letter: ")
@@ -36,10 +38,7 @@ def getGuessedWord(secretWord, lettersGuessed):
             guessed.append(str(guess))
             print(guessed)
             
-            
         
-    
-    
 
 secretWord = 'apple'
 lettersGuessed = ['e']

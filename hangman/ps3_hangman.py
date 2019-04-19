@@ -42,47 +42,44 @@ def chooseWord(wordlist):
 # Load the list of words into the variable wordlist
 # so that it can be accessed from anywhere in the program
 wordlist = loadWords()
+secretWord = chooseWord(wordlist)
 length = len(secretWord)
 copyAnswer = list(secretWord)
 count = 0
 copy = str(secretWord)
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-listed = list(alphabet)
-guessed = list("")
 listedNotGuessed = "You have not guessed " + str(listed) + " letters yet."
         
-
 def isWordGuessed(secretWord, lettersGuessed):
     for i in secretWord:
         guess = input("Type in a letter: ")
+        guess = guess.lower()
         if guess == secretWord:
-            print("Wow - Nice job!")
+            print('Nice job!')
+            return True
         else:
-            print("try again")
+            print("Try again")
+            return False
 
 def getGuessedWord(secretWord, lettersGuessed):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    guessed = list("")
     for i in range(len(alphabet)):
         guess = input("Type in a letter: ")
         guess = guess.lower()
         if alphabet[i] == guess:
             guessed.append(str(guess))
-            print(guessed)
-    '''
-    secretWord: string, the word the user is guessing
-    lettersGuessed: list, what letters have been guessed so far
-    returns: string, comprised of letters and underscores that represents
-      what letters in secretWord have been guessed so far.
-    '''
-    # FILL IN YOUR CODE HERE...
-    
-
+            return guessed
+            
 def getAvailableLetters(lettersGuessed):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    listed = list(alphabet)
     for i in range(len(alphabet)):
         guess = input("Type in a letter: ")
         guess = guess.lower()
         if alphabet[i] == guess:
             listed.remove(str(guess))
-            print(' '.join(listed))
+            listed2 = ' '.join(listed)
+            return listed2
     '''
     lettersGuessed: list, what letters have been guessed so far
     returns: string, comprised of letters that represents what letters have not
@@ -91,13 +88,6 @@ def getAvailableLetters(lettersGuessed):
     # FILL IN YOUR CODE HERE...
     
 
-def hangman(secretWord):
-    print("Welcome to hangman! The word you are guessing " +
-          "contains " + str(length) + " letters. \n" +
-          "Please only type in ONE letter per round. You ready?")
-    
-    getGuessedWord(secretWord, lettersGuessed)
-    isWordGuessed(secretWord, lettersGuessed)
 '''
     secretWord: string, the secret word to guess.
 

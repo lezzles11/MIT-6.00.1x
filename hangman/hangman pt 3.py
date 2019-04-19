@@ -1,17 +1,15 @@
 
-count = 0
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-listed = list(alphabet)
-guessed = list("")
-listedNotGuessed = "You have not guessed " + str(listed) + " letters yet."
 
 def getAvailableLetters(lettersGuessed):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    listed = list(alphabet)
     for i in range(len(alphabet)):
         guess = input("Type in a letter: ")
         guess = guess.lower()
         if alphabet[i] == guess:
             listed.remove(str(guess))
             print(' '.join(listed))
+            
             
         
     '''
