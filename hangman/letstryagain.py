@@ -29,15 +29,10 @@ def chooseWord(wordlist):
 
         
 def isWordGuessed(secretWord, lettersGuessed):
-    i = 0
-    while i < 26:
-        guess = input("Type in what you think the word is: ")
-        guess = guess.lower()
-        if guess == secretWord:
-            print('Nice job!')
-            return True
-        elif guess is not secretWord:
-            print('Try again!')
+    for i in secretWord:
+        if i not in lettersGuessed:
+            return False
+    return True
 
 def getGuessedWord(secretWord, lettersGuessed):
     alphabet = "abcdefghijklmnopqrstuvwxyz"

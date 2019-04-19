@@ -30,6 +30,7 @@ def getGuessedWord(secretWord, lettersGuessed):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     listed = list(alphabet)
     listedNotGuessed = "You have not guessed " + str(listed) + " letters yet."
+    guessed = list()
     print(listedNotGuessed)
     for i in range(len(alphabet)):
         guess = input("Type in a letter: ")
