@@ -11,34 +11,39 @@ def convert(list1):
     for i in range(len(list1):
                    list1[i] = 
 
-#
+>>> secretWord = 'apple' 
+>>> lettersGuessed = ['e', 'i', 'k', 'p', 'r', 's']
+>>> print(getGuessedWord(secretWord, lettersGuessed))
+'_ pp_ e'
+list(string)
+['a', 'p', 'p', 'l', 'e']
+>>> AttributeError
+<class 'AttributeError'>
+>>>
 
-def isWordGuessed(secretWord, lettersGuessed):
-    count = 0
-    for i, c in enumerate(secretWord):
-        if c in lettersGuessed:
-            count = count + 1
-    if count == len(secretWord):
-        return True 
-    else:
-        return False
+    guess = map(str,input("Type in a letter: ").split())
 """
+import collections
+
+
+
 def getGuessedWord(secretWord, lettersGuessed):
-    count = 0
-    #turn secretWord into a list
-    listed = list(secretWord)
-    #looping around every object in secretWord
-    for i, c in enumerate(listed):
-        #if guess not in secretWord
-        if c not in listed:
-            #replace that with the underscore 
-            a[i] -= a['_']
-        else:
-            pass
-    print(listed)
+    print(listedNotGuessed)
+    for i in range(len(alphabet)):
+        guess = input("Type in a letter: ")
+        guess = guess.lower()
+        if alphabet[i] == guess:
+            guessed.append(str(guess))
+            print(guessed)
+            
+            
+        
+    
+    
 
-getGuessedWord("apple", "a")
-
+secretWord = 'apple'
+lettersGuessed = ['e']
+print(getGuessedWord(secretWord, lettersGuessed))
 
 
             
